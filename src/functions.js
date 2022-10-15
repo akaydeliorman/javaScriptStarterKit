@@ -37,13 +37,15 @@ function addToCart3(product) {
 
 
 addToCart3(product1)
-
+// Eğer veri obje ise referans tipi
+// Objeler referans tiptir.
 let product2 = {productName:"Elma", unitPrice:10, quantity:5}
 let product3 = {productName:"Elma", unitPrice:10, quantity:5}
 product2 = product3
 product2.productName = "KARPUZ"
 console.log(product3.productName)
 
+// Eğer veri sayısalsa değer tipi
 let sayi1 = 10
 let sayi2 = 20
 sayi1 = sayi2
@@ -62,7 +64,7 @@ let products = [
 
 addToCart4(products)
 
-function add(bisey,...numbers) { //rest
+function add(bisey,...numbers) { //rest öperatörü ...numbers operatörü her zaman son kısma yaz. En başta kalırsa kod patlar.
     let total = 0;
     for (let i = 0; i < numbers.length; i++) {
         total = total + numbers[i]
@@ -79,7 +81,7 @@ let numbers = [30,10,500,600,120]
 //console.log(...numbers)
 console.log(Math.max(...numbers))
 
-let [icAnadolu,marmara,karadeniz,[icAnadoluSehirleri]] = [
+let [icAnadolu,marmara,karadeniz,[icAnadoluSehirleri]] = [ // icAnadoluSehirlerin [] distract edildi. Böylelikle Ankara konya vs ayrı ayrı alınabilecek
     {name:"İç Anadolu", population:"20M"},
     {name:"Marmara", population:"30M"},
     {name:"Karadeniz", population:"10M"},
@@ -95,7 +97,7 @@ let [icAnadolu,marmara,karadeniz,[icAnadoluSehirleri]] = [
 console.log(icAnadoluSehirleri)
 
 let newProductName, newUnitPrice, newQuantity
-({productName:newProductName, unitPrice:newUnitPrice, quantity:newQuantity } 
+({productName:newProductName, unitPrice:newUnitPrice, quantity:newQuantity } // Yukarıda array distract etmiştik. Burada obje versiyonu var. --> {}
 = {productName:"Elma", unitPrice:10, quantity:5})
 
 console.log(newProductName)
